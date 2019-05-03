@@ -69,7 +69,7 @@ header {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding-top: 222px
+	padding-top: 300px
 }
 
 .logo-wrapper {
@@ -262,6 +262,8 @@ fieldset > legend {
     );	color: white
 	
 }
+
+
 
 @media (min-width: 768px){
 	body {
