@@ -117,7 +117,6 @@ main {
 	justify-content: center;
 	align-items: center;
 	width: 90%;
-	height: 100%;
 	margin: auto
 
 }
@@ -264,6 +263,69 @@ fieldset > legend {
 }
 
 
+@media (min-height: 320px){
+	
+	main {
+		padding-top: 60px
+	}
+	
+}
+
+@media (max-height: 770px){
+	navbar {
+		flex-direction: row;
+		margin: 0;
+		padding: 10px;
+	}
+	
+	.nav-logo-wrapper {
+		margin: 0 20px	
+	}
+	
+	.nav-logo {
+		width: 100px;
+		height: 100px;
+	}
+	
+	.score-panel {
+		border: none;
+		justify-content: space-around
+	}
+	
+	header {
+		padding-top: 128px;
+	}
+	.quiz {
+		padding-top: 128px;
+	}
+
+	
+	.form-question {
+		font-size: 30px
+	}
+	
+	.form-option {
+		font-size: 25px
+	}
+	
+	.submit-btn {
+		font-size: 30px;
+		margin-bottom: 20px;
+	}
+	
+	.ans-msg h1 {
+		font-size: 50px;
+	}
+	
+	.ans-history {
+		font-size: 35px;
+	}
+	
+	.next, .restart-quiz {
+		font-size: 50px;
+		margin-bottom: 20px;
+	}
+}
 
 @media (min-width: 768px){
 	body {
@@ -296,60 +358,5 @@ fieldset > legend {
 	
 	.next, .restart-quiz {
 		font-size: 35px;
-	}
-}
-
-@media (max-height: 750px){
-	navbar {
-		flex-direction: row;
-		margin: 0;
-		padding: 10px
-	}
-	
-	.nav-logo-wrapper {
-		margin: 0 20px	
-	}
-	
-	.nav-logo {
-		width: 100px;
-		height: 100px;
-	}
-	
-	.score-panel {
-		border: none;
-		justify-content: space-around
-	}
-	
-	.quiz {
-	}
-	
-	main {
-		
-	}
-	
-	.form-question {
-		font-size: 30px
-	}
-	
-	.form-option {
-		font-size: 25px
-	}
-	
-	.submit-btn {
-		font-size: 30px;
-		margin-bottom: 20px;
-	}
-	
-	.ans-msg h1 {
-		font-size: 50px;
-	}
-	
-	.ans-history {
-		font-size: 35px;
-	}
-	
-	.next, .restart-quiz {
-		font-size: 50px;
-		margin-bottom: 20px;
 	}
 }
