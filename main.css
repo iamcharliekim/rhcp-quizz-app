@@ -43,8 +43,8 @@ navbar {
 	
 }
 .nav-logo {
-	width: 120px;
-	height: 120px;
+	width: 180px;
+	height:180px;
 	
 }
 
@@ -56,6 +56,7 @@ navbar {
 	border-top: 1px solid lightgray;
 	width: 100%;
 	max-width: 750px;
+	font-size: 21px
 }
 
 .score-panel > li {
@@ -106,7 +107,7 @@ header {
 
 .quiz {
 	width: 100%;	
-	padding-top: 222px;
+	padding-top: 287px;
 	
 }
 
@@ -117,7 +118,7 @@ main {
 	align-items: center;
 	width: 90%;
 	height: 100%;
-	margin: 0 auto
+	margin: auto
 
 }
 
@@ -126,11 +127,11 @@ form {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	height: 20%;
 	color: white;
 	font-size: 20px;
 	width: 100%;
-	max-width: 750px;
+	max-width: 650px;
+	
 }
 
 form > fieldset {
@@ -147,6 +148,7 @@ fieldset > legend {
 	padding: 15px;
 	border: 2px solid lightgray;
 	font-size: 30px;
+	font-weight: bolder
 }
 
 .form-option {
@@ -265,14 +267,17 @@ fieldset > legend {
 	body {
 		font-size: 25px
 	}
-	
+	.score-panel{
+		font-size: 25px;
+	}
 	.start {
 		font-size: 35px;
 		
 	}
 	
 	.form-question {
-		font-size: 50px;
+		font-size: 35px;
+		
 	}
 	
 	.form-option {
