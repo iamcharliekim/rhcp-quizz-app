@@ -5,44 +5,43 @@ let score = 0;
 function generateQuestion () {
 	if (question < STORE.length){
 		return `
-	<main>
-		<form class="question-form">
-			<fieldset name="quiz-question">
-				<legend class="form-question">${STORE[question].question}</legend>
+			<main>
+				<form class="question-form">
+					<fieldset name="quiz-question">
+						<legend class="form-question">${STORE[question].question}</legend>
 
-				<div class="form-option">
-					<input type="radio" name="answer" checked required id="${STORE[question].answers[0]}" value="${STORE[question].answers[0]}">
-					<label for="${STORE[question].answers[0]}"> ${STORE[question].answers[0]}</label>
-				</div>
-						
-				<div class="form-option">
-					<input type="radio" name="answer" required id="${STORE[question].answers[1]}" value="${STORE[question].answers[1]}">
-					<label for="${STORE[question].answers[1]}"> ${STORE[question].answers[1]}</label>
-				</div>
-	
-				<div class="form-option">
-					<input type="radio" name="answer" required id="${STORE[question].answers[2]}" value="${STORE[question].answers[2]}">
-					<label for="${STORE[question].answers[2]}"> ${STORE[question].answers[2]}</label>	
-				</div>
-				
-				<div class="form-option">
-					<input type="radio" name="answer" required id="${STORE[question].answers[3]}" value="${STORE[question].answers[3]}">
-					<label for="${STORE[question].answers[3]}"> ${STORE[question].answers[3]}</label>
-				</div>
+						<div class="form-option">
+							<input type="radio" name="answer" checked required id="${STORE[question].answers[0]}" value="${STORE[question].answers[0]}">
+							<label for="${STORE[question].answers[0]}"> ${STORE[question].answers[0]}</label>
+						</div>
 
-	
-			<div class="submit-wrapper">
-				<button type="submit" class="submit-btn">Submit</button>
-			</div>
-			</fieldset>		
-		</form>
-	</main>
-`
-		
-	} else {
-		renderResults();
-		restartQuiz();
-	}
+						<div class="form-option">
+							<input type="radio" name="answer" required id="${STORE[question].answers[1]}" value="${STORE[question].answers[1]}">
+							<label for="${STORE[question].answers[1]}"> ${STORE[question].answers[1]}</label>
+						</div>
+
+						<div class="form-option">
+							<input type="radio" name="answer" required id="${STORE[question].answers[2]}" value="${STORE[question].answers[2]}">
+							<label for="${STORE[question].answers[2]}"> ${STORE[question].answers[2]}</label>	
+						</div>
+
+						<div class="form-option">
+							<input type="radio" name="answer" required id="${STORE[question].answers[3]}" value="${STORE[question].answers[3]}">
+							<label for="${STORE[question].answers[3]}"> ${STORE[question].answers[3]}</label>
+						</div>
+
+
+					<div class="submit-wrapper">
+						<button type="submit" class="submit-btn">Submit</button>
+					</div>
+					</fieldset>		
+				</form>
+			</main>`
+
+			} else {
+				renderResults();
+				restartQuiz();
+			}
 }
 
 function generateAnsFeedback(answer, question){
@@ -60,8 +59,7 @@ function generateAnsFeedback(answer, question){
 			<div class="ans btn-wrapper">
 				<button class="next">Next</button>
 			</div>
-		</main>
-	`
+		</main>`
 }
 
 function generateResults(score, message){
@@ -91,7 +89,7 @@ function incrementScore () {
 }
 
 function nextQuestion () {
-		question++
+	question++
 
 	if (question <= 4){
 		$('.question').text(question+1)	
@@ -104,6 +102,9 @@ function startQuiz() {
 		$('.start-quiz').remove();
 		$('.score-panel').css({display: 'flex'}).hide().fadeIn()
 		$('.quiz').css('height', '100%')
+		$('body').css('background-image', 'url(images/bgimage.jpg)')
+		$('.quiz').css('display', 'block')
+		
 		renderQuestion()
 		$('.question').text(1)
 	})
@@ -115,9 +116,7 @@ function onUserSubmitAns(){
 	
 		let selectedAns = $('input:checked').val();
 		let correctAns = `${STORE[question].correct}`
-		
-		console.log(question, selectedAns,correctAns)
-		
+				
 		if (selectedAns === correctAns){
 			correctAnsFeedback();
 			incrementScore();
@@ -140,7 +139,6 @@ function incorrectAnsFeedback(){
 
 function renderNextQuestion(){
 	$('.quiz').on('click', '.next', function(e){
-		console.log(question)
 		nextQuestion();
 		renderQuestion()
 	})
@@ -157,6 +155,7 @@ function renderResults(){
 	}
 	
 	$('.quiz').html(generateResults(score, resultMsg))
+
 }
 
 function restartQuiz(){
@@ -170,7 +169,6 @@ function createQuiz() {
 	onUserSubmitAns()
 	renderNextQuestion()
 }
-
 
 
 $(createQuiz)
