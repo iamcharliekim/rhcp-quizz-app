@@ -6,7 +6,6 @@
 
 html {
 	height: 100%
-	
 }
 
 body {
@@ -30,17 +29,15 @@ navbar {
 	align-items: center;
 	padding-top: 30px;
 	padding-bottom: 0
-	
 }
 
-.nav-logo-wrapper{
-	margin-bottom: 30px
-	
+.nav-logo-wrapper {
+	margin-bottom: 30px	
 }
+
 .nav-logo {
 	width: 180px;
 	height:180px;
-	
 }
 
 .score-panel {
@@ -122,7 +119,6 @@ form {
 	font-size: 20px;
 	width: 100%;
 	max-width: 650px;
-	
 }
 
 form > fieldset {
@@ -255,15 +251,12 @@ fieldset > legend {
 
 
 @media (min-height: 320px){
-	
 	main {
 		padding-top: 60px
 	}
-	
 }
 
 @media (max-height: 770px){
-	
 	.start-quiz {
 		padding-top: 128px
 	}
@@ -296,7 +289,6 @@ fieldset > legend {
 		padding-top: 128px;
 	}
 
-	
 	.form-question {
 		font-size: 30px
 	}

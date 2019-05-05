@@ -1,17 +1,20 @@
+// GLOBAL VARIABLES
+
 let question = 0;
 let score = 0; 
 
+// FUNCTIONS
 
 function generateQuestion () {
 	if (question < STORE.length){
 		return `
-			<main>
+			<main role="main">
 				<form class="question-form">
 					<fieldset name="quiz-question">
 						<legend class="form-question">${STORE[question].question}</legend>
 
 						<div class="form-option">
-							<input type="radio" name="answer" checked required id="${STORE[question].answers[0]}" value="${STORE[question].answers[0]}">
+							<input type="radio" name="answer" required id="${STORE[question].answers[0]}" value="${STORE[question].answers[0]}">
 							<label for="${STORE[question].answers[0]}"> ${STORE[question].answers[0]}</label>
 						</div>
 
@@ -46,7 +49,7 @@ function generateQuestion () {
 
 function generateAnsFeedback(answer, question){
 	return `
-		<main>
+		<main role="main">
 			<div class="ans ans-msg">
 				<h1>${answer}</h1>
 			</div>
@@ -64,7 +67,7 @@ function generateAnsFeedback(answer, question){
 
 function generateResults(score, message){
 	return `
-		<main>
+		<main role="main">
 			<div class="ans-msg ans">
 				<h1>You got ${score}/5!</h1>
 			</div>
@@ -170,5 +173,5 @@ function createQuiz() {
 	renderNextQuestion()
 }
 
-
+// DOCUMENT-READY FUNCTION
 $(createQuiz)
